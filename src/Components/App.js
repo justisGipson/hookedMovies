@@ -28,17 +28,16 @@ const App = () => {
    })
 
     axios(`https://omdbapi.com/?s=${searchValue}&apikey=d6966d1d`)
-    .then(response => response.json())
     .then(jsonResponse => {
-      if (jsonResponse.Response === 'True') {
+      if (jsonResponse.data.Response === 'True') {
         dispatch({
           type: "SEARCH_MOVIES_SUCCESS",
-          payload: jsonResponse.Search
+          payload: jsonResponse.data.Search
         })
       } else {
         dispatch({
           type: "SEARCH_MOVIES_FAIL",
-          error: jsonResponse.Error
+          error: jsonResponse.data.Error
         })
       }
     });
