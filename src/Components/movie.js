@@ -1,6 +1,6 @@
 import React from 'react';
 
-const defaultPlaceholderImage = 'http://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg';
+const defaultPlaceholderImage = "https://www.fillmurray.com/640/360";
 
 const Movie = ({ movie }) => {
     const poster = movie.Poster ==='N/A' ? defaultPlaceholderImage : movie.Poster;
